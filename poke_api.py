@@ -47,6 +47,22 @@ def get_pokemon_info(pokemon):
         print(f'Response code: {resp_msg.status_code} ({resp_msg.reason})')
 
     # TODO: Define function that gets a list of all Pokemon names from the PokeAPI
+def pokemon_name_list():
+    """
+    this functions will dis play the list of pokemon names 
+
+    Return: 
+    This function will return the whoole list of pokemon names otherwise it will display enpty list
+
+"""
+    limit_url = POKE_API_URL + "limit =2000"
+    request_msg = requests.get(limit_url)
+
+    if request_msg.status_code == requests.codes.ok:
+       lis_results =request_msg.json().get (print('success'))
+        # Return dictionary of Pokemon info 
+     
+    return request_msg.json()
 
     # TODO: Define function that downloads and saves Pokemon artwork
 
